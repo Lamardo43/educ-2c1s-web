@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>trip2Strip</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+    <link rel="icon" href="img/stripe.svg" type="image/x-icon">
+
+    <link crossorigin="anonymous"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+            rel="stylesheet"/>
+
+    <script
+            crossorigin="anonymous"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://mapgl.2gis.com/api/js/v1"></script>
+
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg bg-warning">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bolder" href="https://github.com/Lamardo43/educ-web_exam_221-329">
+                <i class="bi bi-stripe"></i>
+                Trip2Strip
+            </a>
+
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aboutCompany">О компании</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ourPluses">Наши преимущества</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#excursions">Выбор экскурсии</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#GISIntegration">Интеграция с 2ГИС</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">Связаться с нами</a>
+                    </li>
+
+
+                </ul>
+                <a class="btn btn-dark text-white fs-5" href="html/personalAccount.html">
+                    <i class="bi bi-person-fill"></i>
+                    Личный кабинет
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+<body class="fs-5">
+
+
+
+<div class="container d-flex justify-content-evenly flex-md-row flex-column align-items-center border-bottom py-3"
+     id="aboutCompany">
+    <div class="d-flex flex-column gap-2 w-50 text-black">
+        <h2>Коротко о нас</h2>
+        <p class="text-justify">
+            Добро пожаловать в Trip2Strip - ваш проводник в увлекательном мире Москвы! Организуем незабываемые экскурсии
+            по истории и красотам столицы. Путеводители Trip2Strip готовы показать вам самые интересные места, создавая
+            неповторимые впечатления от города. Присоединяйтесь к нам и открывайте Москву вместе с Trip2Strip!</p>
+    </div>
+    <img alt="" class="w-50 rounded-5" src="img/moscow.jpg">
+</div>
+
+<section class="bg-success-subtle text-black">
+    <div class="container text-center py-3 border-bottom" id="ourPluses">
+        <h2>Наши преимущества</h2>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 rounded-4 ">
+                <i class="bi bi-map fs-2"></i>
+                <h4>Уникальные Маршруты</h4>
+                <p>Trip2Strip предлагает эксклюзивные маршруты по Москве, позволяя вам открыть для себя неизведанные уголки
+                    города.</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 rounded-4 ">
+                <i class="bi bi-people fs-2"></i>
+                <h4>Опытные Гиды</h4>
+                <p>Наши профессиональные гиды делают каждую экскурсию увлекательной, делясь интересными фактами и
+                    историями.</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 rounded-4 ">
+                <i class="bi bi-calendar-day fs-2"></i>
+                <h4>Гибкий График</h4>
+                <p>Trip2Strip предоставляет гибкие опции расписания, чтобы удовлетворить потребности каждого клиента.</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 rounded-4 ">
+                <i class="bi bi-houses fs-2"></i>
+                <h4>Удобная Инфраструктура</h4>
+                <p>Мы предоставляем удобные условия для туристов, включая транспортные средства и комфортные точки
+                    отдыха.</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 rounded-4 ">
+                <i class="bi bi-person-lock fs-2"></i>
+                <h4>Индивидуальный Подход</h4>
+                <p>Мы настраиваем экскурсии под ваши интересы и предпочтения, создавая уникальный опыт для каждого
+                    клиента.</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 rounded-4 ">
+                <i class="bi bi-lock fs-2"></i>
+                <h4>Безопасность и Уверенность</h4>
+                <p>Trip2Strip обеспечивает высший уровень безопасности и комфорта во время каждой экскурсии, чтобы вы могли
+                    полностью насладиться путешествием.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="container mt-3 mb-3" id="excursions">
+    <h2 class="text-center">Выбор экскурсии</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group">
+                <label class="input-group-text" for="inputName" id="searchIcon">
+                    <i class="bi bi-search"></i>
+                </label>
+                <input class="form-control" id="inputName" placeholder="Введите название" required type="text"/>
+            </div>
+        </div>
+        <div class="col-md-6 mt-md-0 mt-1">
+            <select class="form-select" id="selectorPlace"></select>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5 table-responsive fs-6">
+    <table class="table table-bordered" id="routes" >
+        <thead>
+        <tr>
+            <th class="table-warning">Id</th>
+            <th class="table-warning">Название</th>
+            <th class="table-warning">Описание</th>
+            <th class="table-warning">Основные места</th>
+            <th class="table-warning">Записаться</th>
+        </tr>
+        </thead>
+
+        <tbody id="routesBody"></tbody>
+    </table>
+</div>
+
+<div class="container d-flex justify-content-center mt-2 border-bottom pb-4">
+    <button id="prev"><</button>
+    <span class="current-interval-info">Страница
+        <span id="current-interval-start">1</span> из
+        <span id="current-interval-end">30</span>
+    </span>
+    <button id="next">></button>
+</div>
+
+<div class="text-center m-3" id="GISIntegration">
+    <h2>Интеграция с 2ГИС</h2>
+    <div id="GISContainer"></div>
+</div>
+
+
+
+<footer class="bg-black text-white py-3 align-items-center mt-3" id="footer">
+    <div class="container row mx-auto align-items-center">
+
+        <div class="container col-lg-6 p-4">
+            <h2 class="text-center text-uppercase">Связаться с нами</h2>
+
+            <div class="d-flex flex-column gap-3 align-items-center">
+                <input type="text" placeholder="Your name" class="form-control w-75 bg-secondary text-white">
+                <input type="text" placeholder="Your e-mail" class="form-control w-75 bg-secondary text-white">
+
+                <textarea placeholder="Leave a comment here" class="form-control w-75 bg-secondary text-white"></textarea>
+                <button class="btn btn-secondary">Отправить!</button>
+            </div>
+        </div>
+
+        <div class="container col-lg-6 d-flex flex-column gap-3 align-items-center">
+            <ul class="d-flex flex-column gap-3 justify-content-center align-items-center">
+                <a class="list-group-item list-group-item-action rounded d-flex flex-row align-items-center bg-secondary p-2"
+                   href="https://github.com/Lamardo43?tab=repositories">
+                    <i class="bi bi-skype fs-3 me-2 ms-1"></i>
+                    <p class="my-0">@trip_twos_trip</p>
+                </a>
+                <a class="list-group-item list-group-item-action rounded d-flex flex-row align-items-center bg-secondary p-2"
+                   href="https://github.com/Lamardo43?tab=repositories">
+                    <i class="bi bi-envelope-at-fill  fs-3 me-2 ms-1"></i>
+                    <p class="my-0">trip_twos_trip@gmail.com</p>
+                </a>
+                <a class="list-group-item list-group-item-action rounded d-flex flex-row align-items-center bg-secondary p-2"
+                   href="https://github.com/Lamardo43?tab=repositories">
+                    <i class="bi bi-telephone-fill  fs-3 me-2 ms-1"></i>
+                    <p class="my-0">8-800-555-35-35</p>
+                </a>
+
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal -->
+<div
+        aria-hidden="true"
+        aria-labelledby="exampleModalLabel"
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1
+                        class="modal-title fs-5"
+                        id="title"
+                >
+                    Информация о маршруте
+                </h1>
+                <button
+                        aria-label="Close"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        type="button"
+                ></button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive fs-6">
+                    <table class="table table-bordered" id="myTable">
+                        <tr>
+                            <th class="table-warning">ID</th>
+                            <td id="IDValue">Значение ID</td>
+                        </tr>
+                        <tr>
+                            <th class="table-warning">Название</th>
+                            <td id="nameValue">Значение Название</td>
+                        </tr>
+                        <tr>
+                            <th class="table-warning">Описание</th>
+                            <td id="discrValue">Значение Описание</td>
+                        </tr>
+                        <tr>
+                            <th class="table-warning">Основные места</th>
+                            <td id="placesValue">
+                                Значение Основные места
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+                <hr/>
+                <h1
+                        class="modal-title fs-5"
+                        id="guids"
+                >
+                    Гиды на маршруте
+                </h1>
+                <div class="p-6">
+                    <div class="position-relative">
+                        <label
+                                class="form-label"
+                                for="selectorGuideLanguage"
+                        >Выберите язык гида</label
+                        >
+                        <select
+                                class="form-select"
+                                id="selectorGuideLanguage"
+                        >
+                            <option value="notGuideSearch">
+                                Не выбрано
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="position-relative">
+                        <label
+                                class="form-label"
+                                for="inputsGuideExperience"
+                        >Опыт гида</label
+                        >
+                        <div
+                                class="input-group mb-3"
+                                id="inputsGuideExperience"
+                        >
+                            <span class="input-group-text">От</span>
+                            <input
+                                    class="form-control"
+                                    id="inputExperienceFrom"
+                                    placeholder="1"
+                                    required
+                                    type="text"
+                            />
+                            <span class="input-group-text">До</span>
+                            <input
+                                    class="form-control"
+                                    id="inputExperienceTo"
+                                    placeholder="5"
+                                    required
+                                    type="text"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive fs-6">
+                    <table class="table table-bordered" id="guides">
+                        <thead>
+                        <tr>
+                            <th class="table-warning"></th>
+                            <th class="table-warning">ID</th>
+                            <th class="table-warning">Язык</th>
+                            <th class="table-warning">Имя</th>
+                            <th class="table-warning">Ставка</th>
+                            <th class="table-warning">Опыт работы</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="guidesBody"></tbody>
+                    </table>
+                </div>
+
+
+                <hr/>
+                <h1
+                        class="modal-title fs-5"
+                        id="order"
+                >
+                    Оформление заказа
+                </h1>
+
+                <div id="modalAlert"></div>
+                <div>
+                    <form>
+                        <div class="position-relative">
+                            <label
+                                    class="form-label"
+                                    for="inputFIO"
+                            >Введите ФИО*</label
+                            >
+                            <input
+                                    class="form-control"
+                                    id="inputFIO"
+                                    placeholder="Иванов Иван Иванович"
+                                    required
+                                    type="text"
+                            />
+                        </div>
+
+                        <div class="position-relative">
+                            <label
+                                    class="form-label"
+                                    for="inputDate"
+                            >Введите дату экскурсии*</label
+                            >
+                            <input
+                                    class="form-control"
+                                    id="inputDate"
+                                    placeholder="YYYY-MM-DD"
+                                    required
+                                    type="date"
+                            />
+                        </div>
+
+                        <div class="position-relative">
+                            <label
+                                    class="form-label"
+                                    for="inputTime"
+                            >Введите время начала*</label
+                            >
+                            <input
+                                    class="form-control"
+                                    id="inputTime"
+                                    placeholder="17:00"
+                                    required
+                                    type="time"
+                            />
+                        </div>
+
+                        <div class="position-relative">
+                            <label
+                                    class="form-label"
+                                    for="selectorPersonCount"
+                            >Выберите количество персон*</label
+                            >
+                            <select
+                                    aria-label="Default select example"
+                                    class="form-select"
+                                    id="selectorPersonCount"
+                            >
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </div>
+
+                        <div class="position-relative">
+                            <label
+                                    class="form-label"
+                                    for="selectorDuration"
+                            >Выберите продолжительность (в
+                                часах)*</label
+                            >
+                            <select
+                                    aria-label="Default select example"
+                                    class="form-select"
+                                    id="selectorDuration"
+                            >
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+
+                        <div class="position-relative">
+                            <label
+                                    class="form-label"
+                                    for="inputStudId"
+                            >Введите номер вашего студенческого
+                                билета</label
+                            >
+                            <input
+                                    class="form-control"
+                                    id="inputStudId"
+                                    placeholder="1234567"
+                                    required
+                                    type="text"
+                            />
+                        </div>
+
+                        <div class="position-relative">
+                            <div
+                                    class="d-flex f-direction-row align-items-center mt-2"
+                            >
+                                <input
+                                        class="me-2"
+                                        id="checkboxOption1"
+                                        name="checkboxGroup"
+                                        type="checkbox"
+                                />
+                                <label
+                                        class="form-label mb-0"
+                                        for="checkboxOption1"
+                                >Использовать скидку для школьников
+                                    и студентов?</label
+                                >
+                            </div>
+
+                            <div
+                                    class="d-flex f-direction-row align-items-center mt-3"
+                            >
+                                <input
+                                        class="me-2"
+                                        id="checkboxOption2"
+                                        name="checkboxGroup"
+                                        type="checkbox"
+                                />
+                                <label
+                                        class="form-label mb-0"
+                                        for="checkboxOption2"
+                                >Добавить легкие закуски и горячие
+                                    напитки во время экскурсии?</label
+                                >
+                            </div>
+                        </div>
+
+                        <p class="text-body-secondary">
+                            Поля, помеченные "*" обязательны для
+                            заполнения
+                        </p>
+                    </form>
+
+                    <hr/>
+                    <h1
+                            class="modal-title fs-5"
+                            id="price"
+                    >
+                        Стоимость
+                    </h1>
+                    <div>
+                        Итоговая стоимость:
+                        <div id="totalPrice"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                        type="button"
+                >
+                    Закрыть
+                </button>
+                <button
+                        class="btn btn-warning"
+                        id="getWithdraw"
+                        type="button"
+                >
+                    Забронировать
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../styles/form_style.css">
+    <link rel="icon" href="images/icon.svg" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+
+    <title>Форма обратной связи</title>
+</head>
+<body>
+<h1>Форма обратной связи</h1>
+
+<form method="post" action="https://httpbin.org/post" enctype="multipart/form-data">
+    <div class="fields">
+        <label for="fio">ФИО</label>
+        <input type="text" id="fio" name="name" placeholder="Иванов Иван Иванович">
+    </div>
+
+    <div class="fields">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="ivanov-ivan@mail.ru">
+    </div>
+
+    <fieldset>
+        <legend>Как вы о нас узнали?</legend>
+
+        <div class="radiobuttons">
+            <input type="radio" name="source" id="friend" value="friends">
+            <label for="friend">Друзья</label>
+        </div>
+
+        <div class="radiobuttons">
+            <input type="radio" name="source" id="ad" value="ad">
+            <label for="ad">Реклама</label>
+        </div>
+    </fieldset>
+
+    <div class="selector">
+        <label for="type_appeal">Тип обращения</label>
+        <select name="type_appeal" id="type_appeal">
+            <option value="complaint">Жалоба</option>
+            <option value="offer">Предложение</option>
+        </select>
+    </div>
+
+    <div class="message_box">
+        <label for="message">Ваше сообщение:</label>
+        <textarea name="message" id="message"></textarea>
+    </div>
+
+    <div class="file">
+        <label for="file_load">Прикрепите файл</label>
+        <input type="file" name="file" id="file_load"  class="file_load">
+
+    </div>
+
+    <div class="checkbox">
+        <input type="checkbox" name="approval" id="approval">
+        <label for="approval">Даю согласие на обработку персональных данных</label>
+    </div>
+
+    <div class="buttons">
+        <a class="btn" href="../index.html">Перейти на страницу авторизации</a>
+        <button class="btn" type="submit">Отправить на httpbin</button>
+    </div>
+</form>
+</body>
+</html>

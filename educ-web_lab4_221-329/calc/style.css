@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Rubik', sans-serif;
+
+    font-size: 20px;
+}
+
+.screen{
+    height: 1.2em;
+    font-size: 30px;
+    border-bottom: black 2px solid;
+    padding: 0.2em;
+}
+
+
+.keyboard {
+    display: flex;
+    flex-direction: row;
+
+    margin: 10px;
+}
+
+.numbers, .operators {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.numbers {
+    width: 150px;
+}
+
+.operators {
+    width: 100px;
+    color: gold;
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    font-family: 'Rubik', sans-serif;
+
+    font-size: 20px;
+}
+
+.operators button {
+    background-color: gold;
+}
+
+input {
+    height: 40px;
+    width: 250px;
+
+    font-family: 'Rubik', sans-serif;
+
+    font-size: 20px;
+}

@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+
+section {
+    display: inline-block;
+    align-items: center;
+    margin-left: 2vw;
+}
+
+a {
+    padding: 1rex;
+    text-decoration: none;
+    color: lightgrey;
+    transition: color 0.5s, border-color 0.5s;
+}
+
+a:hover, .main-menu li:hover {
+    color: grey;
+    border-color: grey;
+}
+
+header {
+    display: flex;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    padding: 1rex;
+    margin: 0;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.main-menu li {
+    border: lightgrey 4px solid;
+    border-radius: 5em;
+
+    font-weight: bold;
+    font-size: 1.5em;
+    color: lightgrey;
+
+    display: inline;
+    margin: 1rem;
+    transition: color 0.5s, border-color 0.5s;
+}
+
+.self_photo img {
+    float: left;
+    margin-right: 2vw;
+    width: 40vw;
+    max-width: 300px;
+    border-radius: 10%;
+}
+
+footer {
+    padding: 1%;
+    color: white;
+    background-color: black;
+}
+
+footer p {
+    text-align: center;
+    margin-inline: 10%;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+    border: 1px solid #dddddd;
+}
+
+th {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    figure {
+        display: flex;
+        justify-content: center;
+    }
+    .self_photo img {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .main-menu li {
+        width: 100%;
+        text-align: center;
+    }
+}
+

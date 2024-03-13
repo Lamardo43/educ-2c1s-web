@@ -1,0 +1,7 @@
+header {
+    display: none;
+}
+
+.person-card {
+    page-break-inside: avoid;
+}
